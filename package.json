@@ -1,0 +1,31 @@
+{
+  "name": "storm-stream",
+  "version": "1.0.0",
+  "description": "duplex stream interface to storm",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jarofghosts/storm-stream.git"
+  },
+  "keywords": [
+    "storm",
+    "stream",
+    "duplex"
+  ],
+  "author": "jesse keane",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jarofghosts/storm-stream/issues"
+  },
+  "homepage": "https://github.com/jarofghosts/storm-stream",
+  "dependencies": {
+    "split": "^0.3.3",
+    "through2": "^0.6.3"
+  },
+  "devDependencies": {
+    "tape": "^3.5.0"
+  }
+}
