@@ -1,5 +1,8 @@
 # storm-stream
 
+[![Build Status](http://img.shields.io/travis/jarofghosts/storm-stream.svg?style=flat)](https://travis-ci.org/jarofghosts/storm-stream)
+[![npm install](http://img.shields.io/npm/dm/storm-stream.svg?style=flat)](https://www.npmjs.org/package/storm-stream)
+
 Duplex stream interface to Storm
 
 ## example
