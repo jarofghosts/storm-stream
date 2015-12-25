@@ -1,34 +1,34 @@
 var through = require('through2')
-  , test = require('tape')
+var test = require('tape')
 
 var stormStream = require('../')
 
-test('writes in proper format to stdout', function(t) {
+test('writes in proper format to stdout', function (t) {
   t.plan(1)
 
   var stdout = through()
-    , stdin = through()
+  var stdin = through()
 
   var stream = stormStream(stdin, stdout)
-    , data = {cats: true}
+  var data = {cats: true}
 
-  stdout.once('data', function(output) {
+  stdout.once('data', function (output) {
     t.equal(output.toString(), JSON.stringify(data) + '\nend\n')
   })
 
   stream.write(data)
 })
 
-test('emits data from stdin, drops end statements', function(t) {
+test('emits data from stdin, drops end statements', function (t) {
   t.plan(2)
 
   var stdout = through()
-    , stdin = through()
+  var stdin = through()
 
   var stream = stormStream(stdin, stdout)
-    , data = {cats: true}
+  var data = {cats: true}
 
-  stream.on('data', function(output) {
+  stream.on('data', function (output) {
     t.deepEqual(output, data)
   })
 
@@ -36,16 +36,16 @@ test('emits data from stdin, drops end statements', function(t) {
   stdin.write(JSON.stringify(data) + '\nend\n')
 })
 
-test('emits error on write error', function(t) {
+test('emits error on write error', function (t) {
   t.plan(1)
 
   var stdout = through()
-    , stdin = through()
+  var stdin = through()
 
   var stream = stormStream(stdin, stdout)
-    , o = {}
+  var o = {}
 
-  stream.on('error', function(err) {
+  stream.on('error', function (err) {
     t.ok(err)
   })
 
@@ -55,15 +55,15 @@ test('emits error on write error', function(t) {
   stream.write(o)
 })
 
-test('emits error on read error', function(t) {
+test('emits error on read error', function (t) {
   t.plan(1)
 
   var stdout = through()
-    , stdin = through()
+  var stdin = through()
 
   var stream = stormStream(stdin, stdout)
 
-  stream.on('error', function(err) {
+  stream.on('error', function (err) {
     t.ok(err)
   })
 

@@ -4,7 +4,9 @@
   "description": "duplex stream interface to storm",
   "main": "index.js",
   "scripts": {
-    "test": "node test/index.js"
+    "lint": "standard index.js test/index.js",
+    "format": "standard --format index.js test/index.js",
+    "test": "node test/index.js && npm run lint"
   },
   "repository": {
     "type": "git",
@@ -26,6 +28,7 @@
     "through2": "^0.6.3"
   },
   "devDependencies": {
+    "standard": "^5.4.1",
     "tape": "^3.5.0"
   }
 }
